@@ -35,6 +35,21 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
         .header h1 {
             font-size: 3rem;
             color: #2c3e50;
@@ -233,11 +248,12 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>Tu Nombre</h1>
+	    <img src="tu-foto-perfil.jpg" width="100%" alt="Foto de perfil profesional" class="profile-image">
+            <h1>Christian Adolfo Salazar Escobedo</h1>
             <div class="subtitle">Analista de Datos</div>
             <p class="value-prop">
-                Transformo datos complejos en insights estratégicos que impulsan la toma de decisiones empresariales. 
-                Especializado en análisis predictivo y visualización de datos para optimizar procesos y maximizar resultados.
+                Cuento con conocimientos en análisis de datos, mejora de procesos y herramientas como Excel avanzado, Power BI, Power Query y SQL.
+		Puedo identificar oportunidades de optimización, generar reportes inteligentes y tomar decisiones basadas en datos.
             </p>
         </header>
 
@@ -246,41 +262,33 @@
             <h2>Habilidades Técnicas</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Análisis de Datos</h3>
+                    <h3>Análisis y visualización de Datos</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Excel</span>
                         <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Visualización</h3>
-                    <div class="skill-list">
-                        <span class="skill-tag">Tableau</span>
                         <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Power Query</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Bases de Datos</h3>
+                    <h3>Gestión y mejor ade procesos</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Excel Avanzado</span>
+                        <span class="skill-tag">Mejora continua</span>
+                        <span class="skill-tag">Optimización de recursos</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Machine Learning</h3>
+                    <h3>Indicadores</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">Regresión</span>
-                        <span class="skill-tag">Clasificación</span>
-                        <span class="skill-tag">Clustering</span>
+                        <span class="skill-tag">Elaboración de reportes</span>
+                        <span class="skill-tag">Creación y seguimieto Kpi's</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Toma de decisiones</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Interpretación de datos</span>
+                        <span class="skill-tag">Priorización de mejoras</span>
                     </div>
                 </div>
             </div>
@@ -291,19 +299,21 @@
             <h2>Competencias Profesionales</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Comunicación</h3>
+                    <h3>Personal</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Presentaciones Ejecutivas</span>
-                        <span class="skill-tag">Storytelling con Datos</span>
-                        <span class="skill-tag">Reportes Técnicos</span>
+                        <span class="skill-tag">Pensamiento crítico</span>
+                        <span class="skill-tag">Aprendizaje continuo</span>
+                        <span class="skill-tag">Responsabilidad y ética</span>
+                        <span class="skill-tag">Resolución de problemas</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Resolución de Problemas</h3>
+                    <h3>Interpersonals</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">Pensamiento Crítico</span>
-                        <span class="skill-tag">Análisis Estratégico</span>
-                        <span class="skill-tag">Optimización de Procesos</span>
+                        <span class="skill-tag">Comunicaión clara</span>
+                        <span class="skill-tag">Trabajo en equipo</span>
+                        <span class="skill-tag">Adaptabilidad</span>
+                        <span class="skill-tag">Capacidad de análisis</span>
                     </div>
                 </div>
             </div>
@@ -318,7 +328,6 @@
                     <p>Segmentación de clientes y análisis de patrones de compra que resultó en un aumento del 15% en la retención.</p>
                     <div class="project-tools">
                         <span class="tool-tag">Python</span>
-                        <span class="tool-tag">K-means</span>
                         <span class="tool-tag">Tableau</span>
                     </div>
                 </div>
@@ -326,8 +335,6 @@
                     <h3>Predicción de Ventas</h3>
                     <p>Modelo predictivo para forecasting de ventas con 92% de precisión, optimizando la gestión de inventario.</p>
                     <div class="project-tools">
-                        <span class="tool-tag">R</span>
-                        <span class="tool-tag">Time Series</span>
                         <span class="tool-tag">Power BI</span>
                     </div>
                 </div>
@@ -343,25 +350,25 @@
             </div>
         </section>
 
-        <!-- Educación -->
-        <section class="section">
-            <h2>Formación Profesional</h2>
-            <div class="education-item">
-                <h3>Licenciatura/Ingeniería en [Tu Carrera]</h3>
-                <div class="institution">Universidad [Nombre]</div>
-                <div class="year">Año de graduación</div>
-            </div>
-            <div class="education-item">
-                <h3>Certificación en Data Analytics</h3>
-                <div class="institution">Plataforma/Institución</div>
-                <div class="year">Año</div>
-            </div>
-            <div class="education-item">
-                <h3>Curso de Machine Learning</h3>
-                <div class="institution">Plataforma/Institución</div>
-                <div class="year">Año</div>
-            </div>
-        </section>
+<!-- Educación -->
+<section class="section">
+    <h2>Formación Profesional</h2>
+    <div class="education-item">
+        <h3>Ingeniería Industrial</h3>
+        <div class="institution">Universidad Privada del Norte (UPN)</div>
+        <div class="year">2025</div>
+    </div>
+    <div class="education-item">
+        <h3>Certificación en Data Analytics</h3>
+        <div class="institution">Google – Coursera</div>
+        <div class="year">2024</div>
+    </div>
+    <div class="education-item">
+        <h3>Curso de Machine Learning</h3>
+        <div class="institution">IBM – edX</div>
+        <div class="year">2024</div>
+    </div>
+</section>
 
         <!-- Contacto -->
         <section class="contact">
@@ -369,17 +376,13 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <span>📧</span>
-                    <span>tu.email@ejemplo.com</span>
+                    <span>AdolfoSalazar18@hotmail.com</span>
                 </div>
                 <div class="contact-item">
                     <span>💼</span>
-                    <span>linkedin.com/in/tu-perfil</span>
+                    <span>linkedin.com/in/christiansalazar-ingindustria</span>
                 </div>
-                <div class="contact-item">
-                    <span>🔗</span>
-                    <span>github.com/tu-usuario</span>
-                </div>
-            </div>
+</div>
         </section>
     </div>
 </body>
