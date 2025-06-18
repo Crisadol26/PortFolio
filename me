@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Analista de Datos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .value-prop {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 4px solid #764ba2;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tool-tag {
+            background: #764ba2;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #28a745;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .education-item .institution {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .education-item .year {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact h2 {
+            color: white;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Tu Nombre</h1>
+            <div class="subtitle">Analista de Datos</div>
+            <p class="value-prop">
+                Transformo datos complejos en insights estratégicos que impulsan la toma de decisiones empresariales. 
+                Especializado en análisis predictivo y visualización de datos para optimizar procesos y maximizar resultados.
+            </p>
+        </header>
+
+        <!-- Habilidades Técnicas -->
+        <section class="section">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Análisis de Datos</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualización</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Plotly</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Bases de Datos</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Excel Avanzado</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Regresión</span>
+                        <span class="skill-tag">Clasificación</span>
+                        <span class="skill-tag">Clustering</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades Blandas -->
+        <section class="section">
+            <h2>Competencias Profesionales</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Comunicación</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Presentaciones Ejecutivas</span>
+                        <span class="skill-tag">Storytelling con Datos</span>
+                        <span class="skill-tag">Reportes Técnicos</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Resolución de Problemas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Pensamiento Crítico</span>
+                        <span class="skill-tag">Análisis Estratégico</span>
+                        <span class="skill-tag">Optimización de Procesos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section class="section">
+            <h2>Proyectos de Análisis</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Análisis de Comportamiento del Cliente</h3>
+                    <p>Segmentación de clientes y análisis de patrones de compra que resultó en un aumento del 15% en la retención.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">K-means</span>
+                        <span class="tool-tag">Tableau</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Predicción de Ventas</h3>
+                    <p>Modelo predictivo para forecasting de ventas con 92% de precisión, optimizando la gestión de inventario.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">R</span>
+                        <span class="tool-tag">Time Series</span>
+                        <span class="tool-tag">Power BI</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Dashboard Operacional</h3>
+                    <p>Automatización de reportes diarios que redujo el tiempo de análisis en un 60% y mejoró la toma de decisiones.</p>
+                    <div class="project-tools">
+                        <span class="tool-tag">SQL</span>
+                        <span class="tool-tag">Python</span>
+                        <span class="tool-tag">Tableau</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educación -->
+        <section class="section">
+            <h2>Formación Profesional</h2>
+            <div class="education-item">
+                <h3>Licenciatura/Ingeniería en [Tu Carrera]</h3>
+                <div class="institution">Universidad [Nombre]</div>
+                <div class="year">Año de graduación</div>
+            </div>
+            <div class="education-item">
+                <h3>Certificación en Data Analytics</h3>
+                <div class="institution">Plataforma/Institución</div>
+                <div class="year">Año</div>
+            </div>
+            <div class="education-item">
+                <h3>Curso de Machine Learning</h3>
+                <div class="institution">Plataforma/Institución</div>
+                <div class="year">Año</div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="contact">
+            <h2>Contacto Profesional</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>tu.email@ejemplo.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>linkedin.com/in/tu-perfil</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <span>github.com/tu-usuario</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
